@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_task/blocs/bg_color/colors_bloc.dart';
+import 'package:test_task/blocs/bg_color/bg_color_bloc.dart';
 import 'package:test_task/features/home/home_model.dart';
 import 'package:test_task/utils/constants/constants.dart';
 
+/// View part of Home
 class HomeView extends StatelessWidget {
+   /// HomeView constructor
   const HomeView({super.key});
 
   @override
@@ -42,9 +44,9 @@ class HomeView extends StatelessWidget {
                       child: Text(
                         model.title,
                         style: TextStyle(
-                          color: state.color.withAlpha(255) == Colors.white
+                          color: state.color.withAlpha(limit) == Colors.white
                               ? Colors.black
-                              : state.color.withAlpha(255),
+                              : state.color.withAlpha(limit),
                           fontSize: textTitleFontSize,
                         ),
                       ),
